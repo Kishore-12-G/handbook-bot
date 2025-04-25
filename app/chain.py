@@ -1,27 +1,3 @@
-# from langchain_core.runnables import RunnablePassthrough, RunnableParallel,RunnableLambda
-# from .core import initialize_chain
-# from .prompt import prompt
-# from .memory import get_session_memory, memory_runnable
-
-# def format_docs(docs):
-#     return "\n\n".join(doc.page_content for doc in docs)
-
-# llm, retriever = initialize_chain()
-
-# chain = (
-#     RunnableParallel({
-#         "context": retriever | format_docs,
-#         "question": RunnablePassthrough(),
-#         "chat_history": RunnableLambda(get_session_memory)
-#     })
-#     | prompt
-#     | llm
-#     | memory_runnable
-# )
-
-
-
-from langchain_core.runnables import RunnablePassthrough,RunnableLambda
 from .core import initialize_chain
 from .prompt import prompt
 from .memory import conversation_memory
